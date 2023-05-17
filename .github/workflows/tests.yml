@@ -1,0 +1,27 @@
+name: CI Tests
+'on':
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  tests:
+    name: E2E Test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - macos-13
+          - macos-12
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v2
+      - name: Install test dependencies.
+        run: make install
+      - name: Test the playbook's syntax.
+        run: make check
+      - name: Test the playbook.
+        run: make local
+        env:
+          ANSIBLE_FORCE_COLOR: '1'

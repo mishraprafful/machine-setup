@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  connection: local
+  pre_tasks:
+    - name: Insall Homebrew
+      ansible.builtin.shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      tags:
+        - install
+        - core
+  roles:
+    - role: elliotweiser.osx-command-line-tools
+    - role: geerlingguy.mac.homebrew
+      tags: [homebrew]
+  tasks:
+  #   - import_tasks: tasks/dotfiles-setup.yml
+    # - import_tasks: tasks/gopass-config.yml
+    - import_tasks: tasks/oh-my-zsh-setup.yml
+    - import_tasks: tasks/miniconda-init.yml
+
+  vars_files:
+    - config.yml

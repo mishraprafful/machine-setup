@@ -1,0 +1,6 @@
+---
+- name: Conda Init
+  ansible.builtin.shell: conda init "$(basename "${SHELL}")"
+  tags:
+    - install
+    - miniconda

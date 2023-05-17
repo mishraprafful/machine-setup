@@ -1,0 +1,25 @@
+---
+homebrew_installed_packages:
+  - go
+  - gopass
+  - zsh
+  - k9s
+  - kubernetes-cli
+  - kubectx
+  - docker
+
+homebrew_taps:
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - miniconda
+  - visual-studio-code
+  - caffeine
+  - brave-browser
+  - slack
+  - obsidian
+  - iterm2
+  - miniconda
+  - obsidian
+  - gitify

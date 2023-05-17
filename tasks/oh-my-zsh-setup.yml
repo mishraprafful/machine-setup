@@ -1,0 +1,37 @@
+---
+- name: Change shell to zsh
+  become: true
+  ansible.builtin.shell: chsh -s $(which zsh) {{ ansible_user_id }}
+  tags: &tags_for_zsh_tasks [install, productivity, dotfiles, zsh]
+- name: Check that oh-my-zsh exists
+  stat:
+    path: "{{ lookup('env', 'HOME') }}/.local/src/oh-my-zsh"
+  register: oh_my_stats
+  tags: *tags_for_zsh_tasks
+- name: Oh-My-Zsh
+  ansible.builtin.shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -s -- --unattended
+  tags: *tags_for_zsh_tasks
+  when: oh_my_stats.stat.exists == False
+  environment:
+    ZSH: "{{ lookup('env', 'HOME') }}/.local/src/oh-my-zsh"
+
+- name: Install zsh-autosuggestions
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions.git
+    dest: "{{ lookup('env', 'HOME') }}/.local/src/oh-my-zsh/custom/plugins/zsh-autosuggestions"
+  tags: *tags_for_zsh_tasks
+- name: Install zsh-syntax-highlighting
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: "{{ lookup('env', 'HOME') }}/.local/src/oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+  tags: *tags_for_zsh_tasks
+- name: Create State ZSH Directory
+  ansible.builtin.file:
+    path: "{{ lookup('env', 'HOME') }}/.local/state/zsh"
+    state: directory
+  tags: *tags_for_zsh_tasks
+- name: Create History File
+  ansible.builtin.file:
+    path: "{{ lookup('env', 'HOME') }}/.local/state/zsh/history"
+    state: touch
+  tags: *tags_for_zsh_tasks
