@@ -1,21 +1,25 @@
 ---
-- hosts: localhost
+- name: Setup Local Machine
+  hosts: localhost
   connection: local
   pre_tasks:
-    - name: Insall Homebrew
+    - name: Install Homebrew
       ansible.builtin.shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       tags:
         - install
         - core
+      changed_when: false
   roles:
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.mac.homebrew
       tags: [homebrew]
   tasks:
-  #   - import_tasks: tasks/dotfiles-setup.yml
+    # - import_tasks: tasks/dotfiles-setup.yml
     # - import_tasks: tasks/gopass-config.yml
-    - import_tasks: tasks/oh-my-zsh-setup.yml
-    - import_tasks: tasks/miniconda-init.yml
+    - name: Setup Oh My Zsh
+      ansible.builtin.import_tasks: tasks/oh-my-zsh-setup.yml
+    - name: Initialize Conda Installation
+      ansible.builtin.import_tasks: tasks/miniconda-init.yml
 
   vars_files:
     - config.yml
