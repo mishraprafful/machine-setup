@@ -16,7 +16,6 @@ homebrew_cask_apps:
   - miniconda
   - visual-studio-code
   - caffeine
-  - brave-browser
   - slack
   - obsidian
   - iterm2
