@@ -17,6 +17,7 @@ homebrew_cask_apps:
   - visual-studio-code
   - caffeine
   - slack
+  - spotify
   - obsidian
   - iterm2
   - miniconda
