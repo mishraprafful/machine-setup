@@ -2,13 +2,7 @@
 - name: Setup Local Machine
   hosts: localhost
   connection: local
-  pre_tasks:
-    - name: Install Homebrew
-      ansible.builtin.shell: xcode-select --install && export HOMEBREW_NO_INSTALL_FROM_API=1 && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-      tags:
-        - install
-        - core
-      changed_when: false
+
   roles:
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.mac.homebrew
