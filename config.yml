@@ -9,6 +9,8 @@ homebrew_installed_packages:
   - docker
   - yadm
   - starship
+  - zsh-syntax-highlighting
+  - zsh-autosuggestions
 
 homebrew_taps:
   - homebrew/cask
