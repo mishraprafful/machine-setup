@@ -21,7 +21,5 @@ homebrew_cask_apps:
   - spotify
   - obsidian
   - iterm2
-  - miniconda
-  - obsidian
   - gitify
   - rectangle
