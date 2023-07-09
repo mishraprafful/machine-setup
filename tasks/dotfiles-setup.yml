@@ -1,1 +1,6 @@
-# TODO: Add cloning dotfiles repo.
+---
+- name: Fetch dotfiles from remote
+  ansible.builtin.command: yadm clone git@github.com:{{ dotfiles_repo }}.git
+  changed_when: false
+  tags:
+    - dotfiles

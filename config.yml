@@ -1,4 +1,6 @@
 ---
+dotfiles_repo: mishraprafful/dotfiles
+
 homebrew_installed_packages:
   - go
   - gopass
