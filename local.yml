@@ -16,5 +16,4 @@
     - name: Initialize Conda Installation
       ansible.builtin.import_tasks: tasks/miniconda-init.yml
 
-  vars_files:
-    - config.yml
+

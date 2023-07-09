@@ -23,6 +23,6 @@ test:
 ##@ Setup a Machine
 
 local: ## Setup local machine.
-	ansible-playbook local.yml --ask-become-pass
+	ansible-playbook local.yml -i config.yml --ask-become-pass
 
 run: install lint check local ## One command to setup a machine
