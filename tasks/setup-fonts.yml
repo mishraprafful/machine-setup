@@ -1,0 +1,18 @@
+---
+- name: Copy nerd-fonts to fonts folder
+  ansible.builtin.copy:
+    src: ./assets/fonts/fira-code-nerd-font/
+    dest: "{{ lookup('env', 'HOME') }}/Library/Fonts"
+    mode: preserve
+  tags:
+    - nerd-font
+    - fonts
+
+- name: Copy noto-emoji to fonts folder
+  ansible.builtin.copy:
+    src: ./assets/fonts/noto-color-emoji/
+    dest: "{{ lookup('env', 'HOME') }}/Library/Fonts"
+    mode: preserve
+  tags:
+    - noto-emoji-font
+    - fonts

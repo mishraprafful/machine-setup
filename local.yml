@@ -10,6 +10,8 @@
   tasks:
     # - import_tasks: tasks/dotfiles-setup.yml
     # - import_tasks: tasks/gopass-config.yml
+    - name: Setup and Install fonts for terminal use
+      ansible.builtin.import_tasks: tasks/setup-fonts.yml
     - name: Initialize Conda Installation
       ansible.builtin.import_tasks: tasks/miniconda-init.yml
 
