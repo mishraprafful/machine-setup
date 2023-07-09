@@ -8,7 +8,7 @@ help: ## Display this help.
 
 install: ## Install dependencies.
 	pip3 install --upgrade pip
-	pip3 install ansible ansible-lint
+	pip3 install --upgrade ansible ansible-lint
 	ansible-galaxy install -r requirements.yml
 
 lint: ## Perform linting.
@@ -24,3 +24,5 @@ test:
 
 local: ## Setup local machine.
 	ansible-playbook local.yml --ask-become-pass
+
+run: install lint check local ## One command to setup a machine
