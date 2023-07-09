@@ -1,5 +1,6 @@
+---
 name: CI Tests
-'on':
+"on":
   pull_request:
   push:
     branches:
@@ -24,6 +25,6 @@ jobs:
       - name: Test the playbook's syntax.
         run: make check
       - name: Test the playbook.
-        run: make local
+        run: make test
         env:
-          ANSIBLE_FORCE_COLOR: '1'
+          ANSIBLE_FORCE_COLOR: "1"
