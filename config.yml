@@ -1,4 +1,7 @@
 ---
+username: mishraprafful
+obsidian_repo: mishraprafful/notes
+
 homebrew_installed_packages:
   - go
   - gopass
