@@ -10,8 +10,6 @@
   tasks:
     # - import_tasks: tasks/dotfiles-setup.yml
     # - import_tasks: tasks/gopass-config.yml
-    - name: Setup Oh My Zsh
-      ansible.builtin.import_tasks: tasks/oh-my-zsh-setup.yml
     - name: Initialize Conda Installation
       ansible.builtin.import_tasks: tasks/miniconda-init.yml
 

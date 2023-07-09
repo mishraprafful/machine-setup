@@ -8,6 +8,9 @@ homebrew_installed_packages:
   - kubectx
   - docker
   - yadm
+  - starship
+  - zsh-syntax-highlighting
+  - zsh-autosuggestions
 
 homebrew_taps:
   - homebrew/cask
