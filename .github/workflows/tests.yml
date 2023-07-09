@@ -1,5 +1,6 @@
+---
 name: CI Tests
-'on':
+"on":
   pull_request:
   push:
     branches:
@@ -26,4 +27,4 @@ jobs:
       - name: Test the playbook.
         run: make local
         env:
-          ANSIBLE_FORCE_COLOR: '1'
+          ANSIBLE_FORCE_COLOR: "1"
