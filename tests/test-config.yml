@@ -1,0 +1,32 @@
+---
+username: mishraprafful
+obsidian_repo: https://github.com/holman/dotfiles.git
+dotfiles_repo: https://github.com/holman/dotfiles.git
+
+homebrew_installed_packages:
+  - go
+  - gopass
+  - zsh
+  - k9s
+  - kubernetes-cli
+  - kubectx
+  - docker
+  - yadm
+  - starship
+  - zsh-syntax-highlighting
+  - zsh-autosuggestions
+
+homebrew_taps:
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - miniconda
+  - visual-studio-code
+  - caffeine
+  - slack
+  - spotify
+  - obsidian
+  - iterm2
+  - gitify
+  - rectangle

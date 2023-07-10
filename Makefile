@@ -17,9 +17,12 @@ lint: ## Perform linting.
 check: ## Perform static syntax check.
 	ansible-playbook local.yml --syntax-check
 	
+test: 
+	ansible-playbook local.yml --extra-vars @tests/test-config.yml --ask-become-pass
+
 ##@ Setup a Machine
 
 local: ## Setup local machine.
-	ansible-playbook local.yml -K
+	ansible-playbook local.yml --extra-vars @config.yml --ask-become-pass
 
 run: install lint check local ## One command to setup a machine
