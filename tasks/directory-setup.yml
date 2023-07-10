@@ -4,4 +4,4 @@
     path: "{{ lookup('env', 'HOME') }}/coding/{{ username }}"
     state: directory
     recurse: "true"
-    mode: drwxr-xr-x
+    mode: "755"
