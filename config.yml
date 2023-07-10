@@ -2,6 +2,7 @@
 username: mishraprafful
 obsidian_repo: git@github.com:mishraprafful/notes.git
 dotfiles_repo: git@github.com:mishraprafful/dotfiles.git
+passwords_repo: git@github.com:mishraprafful/password-store.git
 
 homebrew_installed_packages:
   - go

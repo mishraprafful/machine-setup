@@ -1,0 +1,6 @@
+---
+- name: Fetch passwords from remote
+  ansible.builtin.command: yadm clone {{ passwords_repo }}
+  changed_when: false
+  tags:
+    - passwords
