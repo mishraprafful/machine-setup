@@ -8,9 +8,14 @@
     - role: geerlingguy.mac.homebrew
       tags: [homebrew]
   tasks:
+    - name: Setup directory structure
+      ansible.builtin.import_tasks: tasks/directory-setup.yml
+    - name: Setup Obsidian notes
+      ansible.builtin.import_tasks: tasks/obsidian-vault-setup.yml
     - name: Setup dotfiles from remote
       ansible.builtin.import_tasks: tasks/dotfiles-setup.yml
-    # - import_tasks: tasks/gopass-config.yml
+    - name: Setup passwords from remote
+      ansible.builtin.import_tasks: tasks/gopass-setup.yml
     - name: Setup and Install fonts for terminal use
       ansible.builtin.import_tasks: tasks/setup-fonts.yml
     - name: Initialize Conda Installation
