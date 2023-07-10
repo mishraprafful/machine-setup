@@ -25,6 +25,6 @@ jobs:
       - name: Test the playbook's syntax.
         run: make check
       - name: Test the playbook.
-        run: make local
+        run: make test
         env:
           ANSIBLE_FORCE_COLOR: "1"
