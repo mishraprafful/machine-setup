@@ -1,0 +1,7 @@
+---
+- name: Setup directory structure
+  ansible.builtin.file:
+    path: "{{ lookup('env', 'HOME') }}/coding/{{ username }}"
+    state: directory
+    recurse: "true"
+    mode: drwxr-xr-x

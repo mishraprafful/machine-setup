@@ -1,0 +1,12 @@
+---
+- name: Fetch Obsidian Vault Repo
+  ansible.builtin.git:
+    repo: "{{ obsidian_repo }}"
+    dest: "{{ lookup('env', 'HOME') }}/coding/{{ username }}/"
+    bare: "false"
+    update: "true"
+    accept_hostkey: "true"
+    version: main
+  tags:
+    - obsidian
+    - notes

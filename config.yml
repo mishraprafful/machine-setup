@@ -1,4 +1,6 @@
 ---
+username: mishraprafful
+obsidian_repo: git@github.com:mishraprafful/notes.git
 dotfiles_repo: git@github.com:mishraprafful/dotfiles.git
 
 homebrew_installed_packages:

@@ -1,4 +1,6 @@
 ---
+username: mishraprafful
+obsidian_repo: https://github.com/holman/dotfiles.git
 dotfiles_repo: https://github.com/holman/dotfiles.git
 
 homebrew_installed_packages:
