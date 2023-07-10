@@ -1,6 +1,6 @@
 ---
 - name: Fetch dotfiles from remote
-  ansible.builtin.command: yadm clone git@github.com:{{ dotfiles_repo }}.git
+  ansible.builtin.command: yadm clone {{ dotfiles_repo }}
   changed_when: false
   tags:
     - dotfiles

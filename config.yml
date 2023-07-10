@@ -1,5 +1,5 @@
 ---
-dotfiles_repo: mishraprafful/dotfiles
+dotfiles_repo: git@github.com:mishraprafful/dotfiles.git
 
 homebrew_installed_packages:
   - go
